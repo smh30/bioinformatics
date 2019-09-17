@@ -123,22 +123,19 @@ public class FilterByExons {
       
         
         // find the matches between the two
-        //for each of the records (our matches from the previous step)
+        
         //there's gotta be a better way, this is getting slow.....
         int numRecords = 0;
         int numMatches = 0;
         
         ArrayList<Record> matches = new ArrayList<>();
-        
+        //for each of the records (our matches from the previous step)
         for (Record record : records) {
             numRecords++;
-//            if (record.getPosition().equals("19187291")){
-//                System.out.println(record);
-//            }
+
             //grab the chromosome exon object for its chromosome
             ChromosomeExons exons = getExonsWithChromosome(exonsByChromosome,
                     record.getChromosome());
-           //System.out.println(exons);
             
             //and then check if the location of the record is in the coding parts
             
